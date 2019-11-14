@@ -1,0 +1,585 @@
+  {
+    "name": "Navigation Backgrounds",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "nav_bg_1",
+        "label": "Navigation Image Background 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_2",
+        "label": "Navigation Image Background 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_3",
+        "label": "Navigation Image Background 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_4",
+        "label": "Navigation Image Background 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_5",
+        "label": "Navigation Image Background 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_6",
+        "label": "Navigation Image Background 6"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_7",
+        "label": "Navigation Image Background 7"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_8",
+        "label": "Navigation Image Background 8"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_9",
+        "label": "Navigation Image Background 9"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_10",
+        "label": "Navigation Image Background 10"
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_bg_11",
+        "label": "Navigation Image Background 11"
+      }
+    ]
+  }
+
+
+
+  <div id="desktop-menucont" style="display:none"> 
+      <div class="navbar-cus">
+      
+        
+  
+        <ul class="nav-parent">
+  	{% for link in linklists.main-menu-2.links %}
+    {% assign child_list_handle = link.title | handle %}
+    {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
+    <li class="dropdown">
+      <span class="dropdown-top-link">{{ link.title }} </span>
+        <ul class="dropdown-inner sub-menu">
+        
+          
+        {% for child_link in linklists[child_list_handle].links %}
+        {% assign grand_child_list_handle = child_link.title | handle %}
+        {% if linklists[grand_child_list_handle] and linklists[grand_child_list_handle].links.size > 0 %}
+        
+        <li class="has-dropdown">
+          {{ child_link.title | link_to: child_link.url }}
+        </li>
+        {% else %}
+        <li>
+          {{ child_link.title | link_to: child_link.url }}
+        </li>
+        {% endif %}
+        {% endfor %}    
+                  
+      </ul>
+      
+       <div class="dropdown-content">
+        </div>
+    </li>
+    {% else %}
+    <li>
+      {{ link.title | link_to: link.url }}
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+
+        
+        
+       <!-- <div class="dropdown">
+          <button class="dropbtn"><span class="top-nav">Furniture</span>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          
+          <div class="dropdown-content">  
+            <div class="row-nav">
+              <div class="column-nav">
+                <a href="#"><h3>CLOTHING</h3></a>
+                <a href="https://.com/collections/">Examples</a>
+                <a href="https://.com/collections">Examples</a>
+                <a href="https://.com/collections/">Examples</a>
+                <a href="https://.com/collections/">Examples</a>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+        
+        <div class="dropdown-2">
+          <button class="dropbtn"><span style="min-width: 141px;" class="top-nav">Lighting</span>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          
+          <div class="dropdown-content-2">
+           
+            <div class="row-nav">
+
+              <div class="column-nav">
+                
+               <a href="https://.com/pages/" style="text-align:center"><h3>Examples</h3></a>
+               <a href="https://.com/pages/" style="text-align:center">Examples</a>
+             </div>
+
+           </div>
+         </div>
+
+       </div> 
+             
+
+       <div class="dropdown-3">
+        <button class="dropbtn"><span class="top-nav">Decor</span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        
+        <div class="dropdown-content-3">
+         
+          <div class="row-nav">
+            <div class="column-nav">
+              <a href="#"><h3>ABOUT US</h3></a>
+              <a href="https://.com/pages/">OUR STORY</a>
+              <a href="https://.com/pages/">OUR GALLERY</a>
+              <a href="https://.com/blogs/">OUR BLOG</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      
+      
+      <div class="dropdown-4">
+        <button class="dropbtn"><span class="top-nav">Outdoor</span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        
+        <div class="dropdown-content-4">
+         
+          <div class="row-nav">
+            <div class="column-nav">
+              <a href="https://.com/pages/contact-us"><h3>HELP</h3></a>
+              <a href="https://.com/pages/contact-us">CONTACT US</a>
+              <a href="https://.com/apps/help-center">FAQS</a>
+              
+            </div>
+          </div>
+        </div>
+      </div> 
+        
+              <div class="dropdown-5">
+        <button class="dropbtn"><span class="top-nav">Lighting</span>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        
+        <div class="dropdown-content-5">
+         
+          <div class="row-nav">
+            <div class="column-nav">
+              <a href="https://.com/pages/contact-us"><h3>HELP</h3></a>
+              <a href="https://.com/pages/contact-us">CONTACT US</a>
+              <a href="https://.com/apps/help-center">FAQS</a>
+              
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+    
+  </div>   
+  
+  
+
+
+
+<style>
+  /*-----Additional Edits-----*/
+  
+  
+
+  .dropdown-top-link{
+      padding: 12px 10px !important;
+}
+  @media(max-width:1050px){
+.dropdown-top-link {
+    padding: 12px 8px !important;
+}
+}
+
+i.fa.fa-caret-down {
+    display: none !important;
+}
+
+.dropdown:nth-child(1) .dropdown-content{
+    background:url('{{ settings.nav_bg_1 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(2) .dropdown-content{
+    background:url('{{ settings.nav_bg_2 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(3) .dropdown-content{
+    background:url('{{ settings.nav_bg_3 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(4) .dropdown-content{
+    background:url('{{ settings.nav_bg_4 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(5) .dropdown-content{
+    background:url('{{ settings.nav_bg_5 | img_url: 'master' }}') no-repeat center center / cover;
+}
+  
+.dropdown:nth-child(6) .dropdown-content{
+    background:url('{{ settings.nav_bg_6 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(7) .dropdown-content{
+    background:url('{{ settings.nav_bg_7 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(8) .dropdown-content{
+    background:url('{{ settings.nav_bg_8 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(9) .dropdown-content{
+    background:url('{{ settings.nav_bg_9 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(10) .dropdown-content{
+    background:url('{{ settings.nav_bg_10 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+.dropdown:nth-child(11) .dropdown-content{
+    background:url('{{ settings.nav_bg_11 | img_url: 'master' }}') no-repeat center center / cover;
+}
+  .dropdown:nth-child(12) .dropdown-content{
+    background:url('{{ settings.nav_bg_11 | img_url: 'master' }}') no-repeat center center / cover;
+}
+  .dropdown:nth-child(13) .dropdown-content{
+    background:url('{{ settings.nav_bg_11 | img_url: 'master' }}') no-repeat center center / cover;
+}
+
+
+/*
+.navmenu-meganav--desktop .navmenu-item{
+    background-color:#fff;
+    margin:0 10px;
+    padding-bottom:10px;
+}
+*/
+  
+  .dropdown-inner{
+    display: inline-grid;
+    background:#fff;
+    width: 250px;
+    height: auto;
+}
+
+.dropdown-inner li{
+    display:block;
+    width: 100%;
+}
+  
+  /*
+  .dropdown:nth-child(2) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:87px;
+}
+
+.dropdown:nth-child(3) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:158px;
+}
+
+.dropdown:nth-child(4) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:250px;
+}
+
+.dropdown:nth-child(5) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:357px;
+}
+
+
+.dropdown:nth-child(6) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:442px;
+}
+
+.dropdown:nth-child(7) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:522px;
+}
+
+.dropdown:nth-child(8) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:608px;
+}
+
+.dropdown:nth-child(9) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:669px;
+}
+
+.dropdown:nth-child(10) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:782px;
+}
+
+.dropdown:nth-child(11) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:884px;
+}
+  .dropdown:nth-child(12) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:884px;
+}
+  .dropdown:nth-child(13) .dropdown-content .dropdown-inner{
+    position:relative;
+    left:884px;
+}
+  */
+  
+/*new desktop Menu start */
+
+
+.navbar-cus h3{
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-left:0px;
+}
+.navbar-cus {
+  overflow: hidden;
+  background-color: white;
+  font-family: Arial;
+      width: 1250px;
+  margin: 0px auto;
+  
+}
+
+.navbar-cus a {
+    position: relative;
+    display: inline-block;
+    padding: 12px 15px;
+    line-height: 18px;
+    color: #484848;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    -webkit-transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+}
+.dropdown, .dropdown-2, .dropdown-3, .dropdown-4, .dropdown-5, .dropdown-6        {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn,.dropdown-2 .dropbtn, .dropdown-3 .dropbtn , .dropdown-4 .dropbtn , .dropdown-5 .dropbtn, .dropdown-6 .dropbtn   {
+ padding: 12px 15px;
+    line-height: 18px;
+    color: #484848;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    -webkit-transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 20px 0px;
+  padding-bottom: 17px;
+    padding-top: 21px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0; 
+  min-width: 96px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn,.dropdown-2:hover .dropbtn, .dropdown-3:hover .dropbtn, .dropdown-4:hover .dropbtn, .dropdown-5:hover .dropbtn, .dropdown-6:hover .dropbtn  {
+  background-color: white;
+  
+}
+
+.dropdown:hover span, .dropdown-2:hover span, .dropdown-3:hover span, a.top-nav span:hover{
+ transition-duration: .2s;
+  border-bottom:2px solid red;
+}
+
+  
+.dropdown-content, .dropdown-content-2, .dropdown-content-3, .dropdown-content-4, .dropdown-content-5, .dropdown-content-6 {
+  display: none;
+  position: absolute;
+     width: 1250px;
+  left:0;
+  right:0;
+  margin:auto;
+  z-index: 1;
+  padding:50px 20px;
+      height:450px;
+    width:1285px;
+    padding-top:0;
+  margin-top:0px;
+}
+
+.dropdown-content .header {
+  background: red;
+  padding: 16px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content, .dropdown-2:hover .dropdown-content-2, .dropdown-3:hover .dropdown-content-3, .dropdown-4:hover .dropdown-content-4, .dropdown-5:hover .dropdown-content-5, .dropdown-6:hover .dropdown-content-6 {
+   transition-duration: .2s;
+  display: block;
+      
+}
+  
+    .sub-menu{
+      position: absolute;
+    padding-left: 0;
+    margin-left: 0;
+    -webkit-padding-start: 0;
+    display: none!important;
+}
+
+li.dropdown:hover > .sub-menu{
+    display:block!important;
+    z-index:888;
+}
+  
+
+.column-nav {
+  float: left;
+  width: 33.0%;
+  padding-left: 0px;
+  background-color: white;
+  border-right:2px solid #eaeaea;
+  margin-bottom:20px;
+    margin-top:0;
+    padding-top:20px;
+    height:auto;
+    padding:20px;
+    max-width:300px;
+}
+
+.column-nav a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: .875rem;
+   padding:7px 20px;
+  font-weight: normal;
+}
+
+.column-nav a:hover {
+ 
+  color:#ff5151 !important;
+  text-decoration:none;
+}
+
+.row-nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-nav a h3{
+      font-size: 13px;
+    font-weight:300!important;
+    padding-bottom: 5px;
+    color: black;
+}
+
+.column-nav a:hover h3 {
+    color: #ff5151 !important;
+    text-decoration: none;
+}
+
+.top-nav {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #484848;
+    text-transform: capitalize;
+}
+
+.row-nav{
+
+}
+  .dropdown-top-link{
+  	padding-top:8px;
+    padding-bottom:8px;
+    font-style: normal;
+    font-weight: 700;
+    -webkit-transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    position: relative;
+    display: inline-block;
+    padding: 12px 15px;
+    line-height: 18px;
+    color: #484848;
+    text-decoration: none;
+  }
+  
+  
+
+
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 801;
+    display: block;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+}
+
+
+/*new desktop menu end */
+  
+  @media(max-width:1024px){
+    #desktop-menucont{
+      display:none;
+  }
+  
+    
+  
+</style>
+
+<script>
+    jQuery(document).ready(function() {     
+    jQuery('.dropdown').hover(function(){     
+        jQuery('#overlay').show();    
+    },     
+    function(){    
+        jQuery('#overlay').hide();     
+    });
+});  
+
+</script>
