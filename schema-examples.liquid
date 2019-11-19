@@ -1,0 +1,165 @@
+{% schema %}
+{
+  "name": "Hero",
+  "class": "hero-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Image should be ______"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Mobile hero image (Optional)",
+      "info": "Image should be minimum _____"
+    },
+    {
+      "id": "text_color",
+      "type": "select",
+      "label": "Text color",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "id": "alignment",
+      "type": "select",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top right"
+        },
+        {
+          "value": "center-left",
+          "label": "Center left"
+        },
+        {
+          "value": "center-center",
+          "label": "Center center"
+        },
+        {
+          "value": "center-right",
+          "label": "Center right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "center-center"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Heading",
+      "default": "Hero title"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero subtitle",
+      "default": "Hero subtitle"
+    },
+     {
+          "type": "color",
+          "id": "text_color_subtitle",
+          "label": "Hero Subtitle Color Picker"
+        },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "id": "button_style_transparent",
+      "label": "Transparent button style",
+      "type": "checkbox",
+      "default": false,
+      "info": "Transparent button_____"
+    },
+    {
+      "type": "header",
+      "content": "Section visibility"
+    },
+    {
+      "type": "select",
+      "id": "hide_for",
+      "label": "Hide section for",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "hide-for-mobile",
+          "label": "Mobile"
+        },
+        {
+          "value": "hide-for-desktop",
+          "label": "Desktop"
+        }
+      ],
+      "default": "none"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Buttons",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+		{
+      	"id": "button_style_custom",
+      	"label": "Custom button style",
+      	"type": "checkbox",
+      	"default": false,
+      	"info": "Custom button background styles"
+    	},
+     	{
+          "type": "color",
+          "id": "button_background",
+          "label": "Hero Button Background Color Picker",
+          "default": "initial"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
